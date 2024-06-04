@@ -1,4 +1,5 @@
-
+/.vscode
+/.idea
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -25,5 +26,5 @@
 ###< symfony/asset-mapper ###
 
 ###> phpstan/phpstan ###
-phpstan.neon
+#phpstan.neon
 ###< phpstan/phpstan ###
