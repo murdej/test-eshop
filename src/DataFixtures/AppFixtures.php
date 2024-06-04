@@ -7,6 +7,7 @@ use App\Entity\Category;
 use App\Entity\ParamType;
 use App\Entity\ParamTypeType;
 use App\Entity\Product;
+use App\Entity\ProductState;
 use App\Helper\CommonUtils;
 use App\Service\ProductManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -20,9 +21,17 @@ class AppFixtures extends Fixture
         foreach (['Prim', 'Rolex', 'Omega', 'Tag Heuer', 'Seiko'] as $brandName) {
             $brand = new Brand();
             $brand->setName($brandName);
-            $brand->setSlug(commonUtils::slugify($brandName));
+            $brand->setSlug(CommonUtils::slugify($brandName));
             $brands[] = $brand;
             $manager->persist($brand);
+        }
+
+        $productStates =   [];
+        foreach (['Skladem', 'Ve slevě', 'Použité'] as $productStateName) {
+            $productState = new ProductState();
+            $productState->setName($productStateName);
+            $productStates[] = $productState;
+            $manager->persist($productState);
         }
 
         /** @var ParamType[] $paramTypes */
@@ -61,7 +70,7 @@ class AppFixtures extends Fixture
             $cat = new Category();
             $cat->setParentCategory($rootCat);
             $cat->setName($name);
-            $cat->setSlug(commonUtils::slugify($name));
+            $cat->setSlug(CommonUtils::slugify($name));
             $cat->setNumOrder($i++);
             foreach($paramTypeKeys as $k)
                 $cat->addParamType($paramTypes[$k]);
@@ -92,8 +101,9 @@ class AppFixtures extends Fixture
             $product->setSlug(CommonUtils::slugify($productName));
             $product->setCode((string)($i + 156000));
             $product->setNumOrder($i++);
-            $product->setCategory(commonUtils::randomItem($cats));
-            $product->setBrand(commonUtils::randomItem($brands));
+            $product->setCategory(CommonUtils::randomItem($cats));
+            $product->setBrand(CommonUtils::randomItem($brands));
+            $product->setProductState(CommonUtils::randomItem($productStates));
             $product->setPrice((string)random_int(300, 30000));
             $product->setDescription('Bla bla');
             // echo "cat id = " . $product->getCategory()->getId(); exit();

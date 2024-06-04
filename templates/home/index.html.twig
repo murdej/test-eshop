@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper">
+
+        {% for product in products %}
+            <h3>{{ product.name }}</h3>
+            <div>Cena: {{ product.price }}</div>
+            {% for paramValue in product.paramValues %}
+                <div>{{ paramValue.paramType.name }}: {{ paramValue.numberValue }}{{ paramValue.paramType.unit }} {{ paramValue.stringValue }}</div>
+            {% endfor %}
+        {% endfor %}
+
+    </div>
+{% endblock %}

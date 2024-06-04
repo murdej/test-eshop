@@ -2,4 +2,4 @@
 
 cd $(dirname $0)/..
 
-./vendor/bin/phpstan -l7 analyze src
+./vendor/bin/phpstan analyze -c phpstan.neon

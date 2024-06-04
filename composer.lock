@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "364a8fab6dfd73fd1224ce5b282a0d16",
+    "content-hash": "e0eb1bd4b4d0dec1e03747243cd1a4ff",
     "packages": [
         {
             "name": "composer/semver",
@@ -3455,16 +3455,16 @@
         },
         {
             "name": "symfony/form",
-            "version": "v7.0.7",
+            "version": "v7.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/form.git",
-                "reference": "b4df6a399a2b03782a0163807239db342659f54f"
+                "reference": "1d0128e2f7e80c346ec51fa4d1ce4fec0d435eeb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/form/zipball/b4df6a399a2b03782a0163807239db342659f54f",
-                "reference": "b4df6a399a2b03782a0163807239db342659f54f",
+                "url": "https://api.github.com/repos/symfony/form/zipball/1d0128e2f7e80c346ec51fa4d1ce4fec0d435eeb",
+                "reference": "1d0128e2f7e80c346ec51fa4d1ce4fec0d435eeb",
                 "shasum": ""
             },
             "require": {
@@ -3531,7 +3531,7 @@
             "description": "Allows to easily create, process and reuse HTML forms",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/form/tree/v7.0.7"
+                "source": "https://github.com/symfony/form/tree/v7.0.8"
             },
             "funding": [
                 {
@@ -3547,7 +3547,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-04-28T11:44:19+00:00"
+            "time": "2024-05-31T14:55:39+00:00"
         },
         {
             "name": "symfony/framework-bundle",
@@ -8405,6 +8405,65 @@
                 }
             ],
             "time": "2024-04-05T04:35:58+00:00"
+        },
+        {
+            "name": "rector/rector",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rectorphp/rector.git",
+                "reference": "556509e2dcf527369892b7d411379c4a02f31859"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/556509e2dcf527369892b7d411379c4a02f31859",
+                "reference": "556509e2dcf527369892b7d411379c4a02f31859",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0",
+                "phpstan/phpstan": "^1.11"
+            },
+            "conflict": {
+                "rector/rector-doctrine": "*",
+                "rector/rector-downgrade-php": "*",
+                "rector/rector-phpunit": "*",
+                "rector/rector-symfony": "*"
+            },
+            "suggest": {
+                "ext-dom": "To manipulate phpunit.xml via the custom-rule command"
+            },
+            "bin": [
+                "bin/rector"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Instant Upgrade and Automated Refactoring of any PHP code",
+            "keywords": [
+                "automation",
+                "dev",
+                "migration",
+                "refactoring"
+            ],
+            "support": {
+                "issues": "https://github.com/rectorphp/rector/issues",
+                "source": "https://github.com/rectorphp/rector/tree/1.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/tomasvotruba",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-05-18T09:40:27+00:00"
         },
         {
             "name": "sebastian/cli-parser",

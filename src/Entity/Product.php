@@ -48,6 +48,10 @@ class Product
     #[ORM\ManyToMany(targetEntity: ParamValue::class)]
     private Collection $paramValues;
 
+    #[ORM\ManyToOne(inversedBy: 'products')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?ProductState $productState = null;
+
     public function __construct()
     {
         $this->paramValues = new ArrayCollection();
@@ -73,6 +77,18 @@ class Product
     public function setCategory(?Category $category): static
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getProductState(): ?ProductState
+    {
+        return $this->productState;
+    }
+
+    public function setProductState(?ProductState $productState): static
+    {
+        $this->productState = $productState;
 
         return $this;
     }
